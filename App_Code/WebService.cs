@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
-[WebService(Namespace = "http://blah.com/")]
+[WebService(Namespace = "")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 [System.Web.Script.Services.ScriptService]
 public class WebService : System.Web.Services.WebService
