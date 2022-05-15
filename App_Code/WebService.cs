@@ -1,15 +1,7 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 using System.Web.Services;
-using System.Web.Services.Protocols;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Web.Script.Serialization;
 using System.Web.Script.Services;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Data;
+using System.Threading.Tasks;
 
 [WebService(Namespace = "")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -28,6 +20,6 @@ public class WebService : System.Web.Services.WebService
     [ScriptMethod(UseHttpGet = true, ResponseFormat = ResponseFormat.Json)]
     public void GetAttestation(string numberBook)
     {
-        HttpContext.Current.Response.Write(Current_attestation.getAttestation(numberBook));
+        HttpContext.Current.Response.Write(Current_attestation.getCurrentAttestation(numberBook));
     }
 }
