@@ -92,10 +92,10 @@ public class Current_attestation
                 "Inner join Control_type on Current_attestation.id_control_type = Control_type.id_control_type where educ_year = YEAR(getdate()) and student_book = '" + student_book + "'";
         var command = new SqlCommand(s, con);
         var reader = command.ExecuteReader();
-        Marks marks = null;
+        Current_attestation current_attestation = null;
         if (reader.Read())
         {
-            marks = new Marks(
+            current_attestation = new Current_attestation(
                 reader.GetInt16(0),
                 reader.GetString(1),
                 reader.GetString(2),
@@ -104,7 +104,7 @@ public class Current_attestation
                 reader.GetString(5),
                 reader.GetInt16(6),
                 reader.GetInt16(7));
-            string JsonResult = JsonConvert.SerializeObject(marks, Formatting.Indented);
+            string JsonResult = JsonConvert.SerializeObject(current_attestation, Formatting.Indented);
             con.Close();
             return JsonResult;
         }
